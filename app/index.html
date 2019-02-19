@@ -6,14 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Vélocity</title>
     <link href='https://api.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet' />
+    <link rel="stylesheet" href="dist/assets/css/style.css">
 </head>
 <body>
-    
-    <form id="form">
-        <input type="text" placeholder="pseudo" name="pseudo">
-        <input type="password" placeholder="password" name="password">
-        <input type="submit">
-    </form>
 
     <div id="map" style="display:block;width: 400px; height: 300px;">
         Ma map
@@ -21,73 +16,6 @@
 
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src='https://api.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
-
-    <script src="js/script.js"></script>
-
-    <script>
-        mapboxgl.accessToken = 'pk.eyJ1IjoidGhvbWFzMzMiLCJhIjoiY2pzYWFpcXNwMDAxbzN5cGZneGxia3U3ZCJ9.sigYT2nlLnC1siycJ3im-Q';
-        var map = new mapboxgl.Map({
-        container: 'map',
-        style: 'mapbox://styles/mapbox/streets-v11',
-        center: [4.85,45.75],
-        zoom: 10,
-        });
-
-        var geojson = {
-            "type": "FeatureCollection",
-            "features": [
-                {
-                    "type": "Feature",
-                    "properties": {
-                        "message": "Foo",
-                        "iconSize": [30, 30],
-                    },
-                    "geometry": {
-                            "type": "Point",
-                            "coordinates": [4.85,45.75]
-                    }
-                },
-            ]
-        }
-
-        // var url = 'https://api.jcdecaux.com/vls/v1/stations?contract=lyon&apiKey=16613431a6af103df05b4f8ff767c26f87858ec8';
-        // var oXhr = new XMLHttpRequest();
-        // oXhr.onload = function () {
-        //   var data = JSON.parse(this.responseText);
-        //   // ici les données sont exploitables
-        //   console.log('retour : ', data);
-        // };
-        // oXhr.onerror = function (data) {
-        //   console.log('Erreur ...');
-        // };
-        // oXhr.open('GET', url, true);
-        // oXhr.send(null);
-
-
-        geojson.features.forEach(function(marker) {
-            // create a DOM element for the marker
-            var el = document.createElement('div');
-            el.className = 'marker';
-            el.style.backgroundImage = 'url(https://placekitten.com/g/' + marker.properties.iconSize.join('/') + '/)';
-            el.style.width = marker.properties.iconSize[0] + 'px';
-            el.style.height = marker.properties.iconSize[1] + 'px';
-            
-            // el.addEventListener('click', function() {
-            //     window.alert(marker.properties.message);
-            // });
-            
-            // add marker to map
-            new mapboxgl.Marker(el)
-                .setLngLat(marker.geometry.coordinates)
-                .addTo(map);
-        });
-
-        // map.addControl(new mapboxgl.GeolocateControl({
-        //     positionOptions: {
-        //         enableHighAccuracy: true
-        //     },
-        //     trackUserLocation: true
-        // }));
-    </script>
+    <script src="dist/assets/js/app.js"></script>
+    </html>
 </body>
-</html>
