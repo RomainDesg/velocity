@@ -1,0 +1,13 @@
+.marker {
+  display: block;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+}
+
+#map {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+}
