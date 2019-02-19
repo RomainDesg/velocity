@@ -1,12 +1,15 @@
-.marker {
-    display: block;
-    border: none;
+#marker {
+    background-image: url('../img/mapbox-icon.png');
+    background-size: cover;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
-    padding: 0;
-}
+    cursor: pointer;
+  }
 #map {
     position: absolute;
     top: 0;
     bottom: 0;
     width: 100%;
+    overflow: hidden;
 }
