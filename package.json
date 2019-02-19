@@ -10,6 +10,10 @@
     "gulp-csso": "latest",
     "gulp-load-plugins": "latest",
     "gulp-rename": "latest",
-    "gulp-sass": "latest"
+    "gulp-sass": "latest",
+    "gulp-uglify": "^3.0.1"
+  },
+  "dependencies": {
+    "pump": "^3.0.0"
   }
 }

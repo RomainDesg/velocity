@@ -52,3 +52,17 @@ gulp.task('default', ['build']);
     gulp.watch(source + "/assets/sass/*.scss", ['sass']);
     gulp.watch("app/*.html").on('change', browserSync.reload);
 });
+
+var gulp = require('gulp');
+var uglify = require('gulp-uglify');
+var pump = require('pump');
+ 
+gulp.task('compress', function (cb) {
+  pump([
+        gulp.src(source + '/assets/js/app.js'),
+        uglify(),
+        gulp.dest(destination + '/assets/js')
+    ],
+    cb
+  );
+});
