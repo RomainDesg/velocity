@@ -5,39 +5,16 @@ mapboxgl.accessToken = 'pk.eyJ1IjoidGhvbWFzMzMiLCJhIjoiY2pzYWFpcXNwMDAxbzN5cGZne
     center: [4.85,45.75],
     zoom: 10,
     });
-    
-    var geojson = {
-        "type": "FeatureCollection",
-        "features": [
-            {
-                "type": "Feature",
-                "properties": {
-                    "message": "Foo",
-                    "iconSize": [30, 30],
-                },
-                "geometry": {
-                        "type": "Point",
-                        "coordinates": [4.85,45.75]
-                }
-            },
-        ]
-    }
 
-    // var url = 'https://api.jcdecaux.com/vls/v1/stations?contract=lyon&apiKey=16613431a6af103df05b4f8ff767c26f87858ec8';
-    // var oXhr = new XMLHttpRequest();
-    // oXhr.onload = function () {
-    //   var data = JSON.parse(this.responseText);
-    //   // ici les données sont exploitables
-    //   console.log('retour : ', data);
-    // };
-    // oXhr.onerror = function (data) {
-    //   console.log('Erreur ...');
-    // };
-    // oXhr.open('GET', url, true);
-    // oXhr.send(null);
+$.ajax({
+    type: "GET",
+    dataType: "JSON",
+    url: "https://api.jcdecaux.com/vls/v1/stations?contract=lyon&apiKey=16613431a6af103df05b4f8ff767c26f87858ec8",
 
-
-    geojson.features.forEach(function(marker) {
+    success: function(data){
+        console.log(data);
+        // add markers to map
+        data.forEach(function(marker) {
         // create a DOM element for the marker
         var el = document.createElement('div');
         el.className = 'marker';
@@ -45,19 +22,23 @@ mapboxgl.accessToken = 'pk.eyJ1IjoidGhvbWFzMzMiLCJhIjoiY2pzYWFpcXNwMDAxbzN5cGZne
         el.style.width = marker.properties.iconSize[0] + 'px';
         el.style.height = marker.properties.iconSize[1] + 'px';
         
-        // el.addEventListener('click', function() {
-        //     window.alert(marker.properties.message);
-        // });
+        el.addEventListener('click', function() {
+        window.alert(marker.properties.message);
+        });
         
         // add marker to map
         new mapboxgl.Marker(el)
-            .setLngLat(marker.geometry.coordinates)
-            .addTo(map);
-    });
+        .setLngLat(marker.geometry.coordinates)
+        .addTo(map);
+        });
+    },
+    error: function(data){
+        console.error();
 
-    // map.addControl(new mapboxgl.GeolocateControl({
-    //     positionOptions: {
-    //         enableHighAccuracy: true
-    //     },
-    //     trackUserLocation: true
-    // }));
+    }
+
+})
+
+
+
+    
