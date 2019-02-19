@@ -19,7 +19,7 @@ $.ajax({
             el.id = 'marker';
         console.log(el.id);
             var popup = new mapboxgl.Popup({ offset: 25 })
-            .setHTML(`<strong>${marker.address}</strong> </br>${marker.status} </br>${marker.available_bikes}</br> ${marker.available_bike_stands}`);
+            .setHTML(`<strong>${marker.name}</strong> </br><p class="text-uppercase">Places restantes</p>${marker.available_bikes}</br><p class="text-uppercase">Vélos disponibles</p> ${marker.available_bike_stands} </br><span class="text-warning">${marker.status}</span> </br><p class="btn btn-success btn-sm text-uppercase">réserver</p>`);
         el.addEventListener('click', function() {
         window.alert(marker.properties.message);
         });
