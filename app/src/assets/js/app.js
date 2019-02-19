@@ -19,7 +19,7 @@ $.ajax({
             el.id = 'marker';
         console.log(el.id);
             var popup = new mapboxgl.Popup({ offset: 25 })
-            .setHTML(`${marker.address} ${marker.status} ${marker.available_bikes} ${marker.available_bike_stands}`);
+            .setHTML(`<strong>${marker.address}</strong> ${marker.status} ${marker.available_bikes} ${marker.available_bike_stands}`);
         el.addEventListener('click', function() {
         window.alert(marker.properties.message);
         });
