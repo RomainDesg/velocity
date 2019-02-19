@@ -19,10 +19,10 @@ $.ajax({
             el.id = 'marker';
         console.log(el.id);
             var popup = new mapboxgl.Popup({ offset: 25 })
-            // .setText(`${marker.address} \n  ${marker.status}`);
-        // el.addEventListener('click', function() {
-        // window.alert(marker.properties.message);
-        // });
+            .setHTML(`${marker.address} ${marker.status} ${marker.available_bikes} ${marker.available_bike_stands}`);
+        el.addEventListener('click', function() {
+        window.alert(marker.properties.message);
+        });
         
         // add marker to map
         new mapboxgl.Marker(el)

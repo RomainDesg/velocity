@@ -53,16 +53,12 @@ gulp.task('default', ['build']);
     gulp.watch("app/*.html").on('change', browserSync.reload);
 });
 
-var gulp = require('gulp');
-var uglify = require('gulp-uglify');
-var pump = require('pump');
+let rename = require("gulp-rename");
+let uglify = require('gulp-uglify-es').default;
  
-gulp.task('compress', function (cb) {
-  pump([
-        gulp.src(source + '/assets/js/app.js'),
-        uglify(),
-        gulp.dest(destination + '/assets/js')
-    ],
-    cb
-  );
+gulp.task("uglify", function () {
+    return gulp.src(source + "/assets/js/app.js")
+        .pipe(rename("app.js"))
+        .pipe(uglify(/* options */))
+        .pipe(gulp.dest(destination + "/assets/js"));
 });

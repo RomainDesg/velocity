@@ -14,3 +14,12 @@
   overflow: hidden;
   width: 100%;
 }
+
+.mapboxgl-popup {
+  max-width: 200px;
+}
+
+.mapboxgl-popup-content {
+  font-family: 'Open Sans', sans-serif;
+  text-align: center;
+}
