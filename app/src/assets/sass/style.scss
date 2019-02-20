@@ -1,3 +1,22 @@
+#header{
+  position:fixed;
+  z-index: 9999;
+  width: 100%;
+  background-color: black;
+    .navbar-brand{
+      color: white;
+      font-size: 2.5rem;
+    }
+      .collapse{
+        color:white;
+      }
+        a{
+          color: white;
+        }
+          .navbar-toggler-icon{
+            color: white;
+          }
+}
 #marker {
     background-image: url('../img/mapbox-icon.png');
     background-size: cover;
@@ -19,7 +38,14 @@
 .mapboxgl-popup-content {
   text-align: center;
   font-family: 'Open Sans', sans-serif;
-  p{
-    margin-bottom: 0;
-  }
+    p{
+      margin-bottom: 0;
+    }
+      h3{
+        border: solid 1px Black;
+        border-radius: 5px;
+      }
+        span{
+          margin-bottom: 5px;
+        }
 }

@@ -1,3 +1,3 @@
 <?php
-var try = "hello world"
-echo try;
+header('Access-Control-Allow-Origin:*');
+echo "Hello world !";

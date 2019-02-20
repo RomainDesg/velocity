@@ -58,7 +58,7 @@ let rename = require("gulp-rename");
 let uglify = require('gulp-uglify-es').default;
  
 gulp.task("uglify", function () {
-    return gulp.src(source + "/assets/js/app.js")
+    return gulp.src(source + "/assets/js/*.js")
         .pipe(rename("app.js"))
         .pipe(uglify(/* options */))
         .pipe(gulp.dest(destination + "/assets/js"));

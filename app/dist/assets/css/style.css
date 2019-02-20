@@ -1,3 +1,27 @@
+#header {
+  position: fixed;
+  z-index: 9999;
+  width: 100%;
+  background-color: black;
+}
+
+#header .navbar-brand {
+  font-size: 2.5rem;
+  color: white;
+}
+
+#header .collapse {
+  color: white;
+}
+
+#header a {
+  color: white;
+}
+
+#header .navbar-toggler-icon {
+  color: white;
+}
+
 #marker {
   width: 40px;
   height: 40px;
@@ -26,4 +50,13 @@
 
 .mapboxgl-popup-content p {
   margin-bottom: 0;
+}
+
+.mapboxgl-popup-content h3 {
+  border: solid 1px Black;
+  border-radius: 5px;
+}
+
+.mapboxgl-popup-content span {
+  margin-bottom: 5px;
 }

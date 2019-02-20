@@ -10,14 +10,46 @@
     <link rel="stylesheet" href="dist/assets/css/style.css">
 </head>
 <body>
-    <header id="header">
-        <div class="container">
-            <H1><strong>VELOCITY</strong></H1>
-        </div>
-    </header>
-    <setion id="map">
-        <div class="container col-8" id="map"></div>
-    </setion>
+<header id="header">
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+        <a class="navbar-brand text-uppercase" href="#">VéloCity</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav text-center">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Mes réservations</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Mon compte
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item text-dark" href="#">Modifier</a>
+                    <a class="dropdown-item text-danger" href="#">Se déconnecter</a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Contact</a>
+            </li>
+        </ul>
+    </div>
+    </nav>
+</header>
+
+<form id="formLogin">
+    <input type="text" placeholder="username" name="username">
+    <input type="password" placeholder="password" name="password">
+    <input type="submit" value="LOGIN">
+</form>
+
+<setion id="map">
+    <div class="container" id="map"></div>
+</setion>
 
 
 

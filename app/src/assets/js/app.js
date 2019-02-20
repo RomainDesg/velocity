@@ -1,10 +1,12 @@
 mapboxgl.accessToken = 'pk.eyJ1IjoidGhvbWFzMzMiLCJhIjoiY2pzYWFpcXNwMDAxbzN5cGZneGxia3U3ZCJ9.sigYT2nlLnC1siycJ3im-Q';
     var map = new mapboxgl.Map({
     container: 'map',
-    style: 'mapbox://styles/mapbox/streets-v11',
+    style: 'mapbox://styles/mapbox/basic-v9',
     center: [4.85,45.75],
-    zoom:12,
+    zoom:15,
     });
+ 
+    var urlAPI = "http://localhost/projet/velocity/api/";
 
 $.ajax({
     type: "GET",
@@ -22,15 +24,11 @@ $.ajax({
             .setHTML(`
                 <strong>${marker.name}</strong></br>
                 <p class="text-uppercase">Vélos disponibles</p></br>
-                <p>${marker.available_bikes} / ${marker.bike_stands}</p>
+                <h3>${marker.available_bikes} / ${marker.bike_stands}</h3>
                 </br><span class="text-warning">${marker.status}</span>
-                <form>
+                <form onSubmit="formSubmitPopup(event)">
                     <input type="submit" class="btn btn-sm btn-success value="RESERVER">
-                </form>`);
-        el.addEventListener('click', function() {
-        window.alert(marker.properties.message)
-        });
-        
+                </form>`);  
         // add marker to map
         new mapboxgl.Marker(el)
             .setLngLat(marker.position)
@@ -43,9 +41,20 @@ $.ajax({
     }
 })
 
-$.ajax({
 
-})
+
+function formSubmitPopup(event){
+    event.preventDefault();
+    // AJAX request
+    $.ajax({
+        type: "POST",
+        url:`${urlAPI}/index.php`,
+        data: "test",
+        success: function(data){
+            console.log(data);
+        }
+    }) 
+}
 
 
 
