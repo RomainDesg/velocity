@@ -3,7 +3,7 @@ mapboxgl.accessToken = 'pk.eyJ1IjoidGhvbWFzMzMiLCJhIjoiY2pzYWFpcXNwMDAxbzN5cGZne
     container: 'map',
     style: 'mapbox://styles/mapbox/streets-v11',
     center: [4.85,45.75],
-    zoom: 13,
+    zoom:12,
     });
 
 $.ajax({
@@ -19,7 +19,7 @@ $.ajax({
             el.id = 'marker';
         console.log(el.id);
             var popup = new mapboxgl.Popup({ offset: 25 })
-            .setHTML(`<strong>${marker.name}</strong> </br><p class="text-uppercase">Places restantes</p>${marker.available_bikes}</br><p class="text-uppercase">Vélos disponibles</p> ${marker.available_bike_stands} </br><span class="text-warning">${marker.status}</span> </br><p class="btn btn-success btn-sm text-uppercase">réserver</p>`);
+            .setHTML(`<strong>${marker.name}</strong> </br><p class="text-uppercase">Vélos disponibles</p>${marker.available_bikes}<p>/</p> ${marker.bike_stands} </br><span class="text-warning">${marker.status}</span> </br><p class="btn btn-success btn-sm text-uppercase">réserver</p>`);
         el.addEventListener('click', function() {
         window.alert(marker.properties.message);
         });

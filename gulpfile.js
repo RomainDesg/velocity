@@ -45,11 +45,12 @@ gulp.task('default', ['build']);
 //     gulp.watch(source + '/assets/sass/*.scss', ['build']);
 //   });
 
-  gulp.task('serve', ['sass'], function() {
+  gulp.task('serve', ['sass', 'uglify'], function() {
     browserSync.init({
         server: "./app"
     });
     gulp.watch(source + "/assets/sass/*.scss", ['sass']);
+    gulp.watch(source + "/assets/js/*.js", ['uglify']);
     gulp.watch("app/*.html").on('change', browserSync.reload);
 });
 
