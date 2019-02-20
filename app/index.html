@@ -12,7 +12,7 @@
 <body>
 <header id="header">
     <nav class="navbar navbar-expand-lg navbar-light bg-dark">
-        <a class="navbar-brand text-uppercase" href="#">VéloCity</a>
+        <a class="navbar-brand" href="#"><img id="navlogo" src="../app/dist/assets/img/logo-velocity-200x200.png" alt=""></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -40,12 +40,13 @@
     </div>
     </nav>
 </header>
-
-<form id="formLogin">
-    <input type="text" placeholder="username" name="username">
-    <input type="password" placeholder="password" name="password">
-    <input type="submit" value="LOGIN">
-</form>
+<section class="connexion">
+    <form id="formLogin">
+        <input type="text" placeholder="username" name="username">
+        <input type="password" placeholder="password" name="password">
+        <input class="btn btn-primary btn-sm" type="submit" value="LOGIN">
+    </form>
+</section>
 
 <setion id="map">
     <div class="container" id="map"></div>
@@ -53,10 +54,10 @@
 
 
 
-    <script src="src/assets/js/jquery-3.3.1.min.js"></script>
+    <script src="dist/assets/js/jquery-3.3.1.min.js"></script>
     <script src='https://api.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <script src="dist/assets/js/app.js"></script>
+    <script src="dist/assets/js/app.min.js"></script>
     </html>
 </body>

@@ -34,7 +34,7 @@ $.ajax({
             .setLngLat(marker.position)
             .setPopup(popup)
             .addTo(map);
-        });
+        });     
     },
     error: function(data){
         console.error();

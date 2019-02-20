@@ -17,6 +17,7 @@ gulp.task('sass', function () {
         .pipe(plugins.autoprefixer())
         .pipe(gulp.dest(destination + '/assets/css/'))
         .pipe(browserSync.stream());
+        
 });
 
 // Tâche "minify" = minification CSS (destination -> destination)
@@ -45,12 +46,12 @@ gulp.task('default', ['build']);
 //     gulp.watch(source + '/assets/sass/*.scss', ['build']);
 //   });
 
-  gulp.task('serve', ['sass', 'uglify'], function() {
+  gulp.task('serve', ['sass', 'concat'], function() {
     browserSync.init({
         server: "./app"
     });
     gulp.watch(source + "/assets/sass/*.scss", ['sass']);
-    gulp.watch(source + "/assets/js/*.js", ['uglify']);
+    gulp.watch(source + "/assets/js/*.js", ['concat']);
     gulp.watch("app/*.html").on('change', browserSync.reload);
 });
 
@@ -61,5 +62,16 @@ gulp.task("uglify", function () {
     return gulp.src(source + "/assets/js/*.js")
         .pipe(rename("app.js"))
         .pipe(uglify(/* options */))
-        .pipe(gulp.dest(destination + "/assets/js"));
+        .pipe(gulp.dest(destination + "/assets/js"))
+        .pipe(browserSync.stream());
+});
+
+var concat = require('gulp-concat');
+ 
+gulp.task('concat', function() {
+  return gulp.src(source + "/assets/js/*.js")
+    .pipe(concat('app.js'))
+    .pipe(uglify(/* options */))
+    .pipe(rename({suffix: '.min'}))
+    .pipe(gulp.dest(destination + "/assets/js"));
 });
