@@ -19,9 +19,16 @@ $.ajax({
             el.id = 'marker';
         console.log(el.id);
             var popup = new mapboxgl.Popup({ offset: 25 })
-            .setHTML(`<strong>${marker.name}</strong> </br><p class="text-uppercase">Vélos disponibles</p>${marker.available_bikes}<p>/</p> ${marker.bike_stands} </br><span class="text-warning">${marker.status}</span> </br><p class="btn btn-success btn-sm text-uppercase">réserver</p>`);
+            .setHTML(`
+                <strong>${marker.name}</strong></br>
+                <p class="text-uppercase">Vélos disponibles</p></br>
+                <p>${marker.available_bikes} / ${marker.bike_stands}</p>
+                </br><span class="text-warning">${marker.status}</span>
+                <form>
+                    <input type="submit" class="btn btn-sm btn-success value="RESERVER">
+                </form>`);
         el.addEventListener('click', function() {
-        window.alert(marker.properties.message);
+        window.alert(marker.properties.message)
         });
         
         // add marker to map
@@ -34,6 +41,10 @@ $.ajax({
     error: function(data){
         console.error();
     }
+})
+
+$.ajax({
+
 })
 
 
