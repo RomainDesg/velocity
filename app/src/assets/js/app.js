@@ -6,7 +6,7 @@ mapboxgl.accessToken = 'pk.eyJ1IjoidGhvbWFzMzMiLCJhIjoiY2pzYWFpcXNwMDAxbzN5cGZne
     zoom:15,
     });
  
-    var urlAPI = "http://localhost/projet/velocity/api/";
+    var urlAPI = "http://localhost/projet/velocity/api";
 
 $.ajax({
     type: "GET",
