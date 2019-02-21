@@ -11,7 +11,7 @@
 </head>
 <body>
 <header id="header">
-    <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-light">
         <a class="navbar-brand" href="#">Vélo-City</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -36,18 +36,46 @@
             <li class="nav-item">
                 <a class="nav-link" href="#">Contact</a>
             </li>
-        </ul>
-    </div>
+            </ul>
+        </div>
     </nav>
 </header>
 <section class="connexion">
-    <div id="test">
-        <form id="formLogin">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+                <div class="card card-signin my-5">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Connectez-vous et commencer a rouler !</h5>
+                        <form class="form-signin" id="formLogin">
+                            <div class="form-label-group">
+                            <input type="text" id="inputEmail" class="form-control" placeholder="Username" name="username" required autofocus>
+                            <label for="inputEmail">Username</label>
+                            </div>
+
+                            <div class="form-label-group">
+                            <input type="password" id="inputPassword" class="form-control" placeholder="Password" name="password" required>
+                            <label for="inputPassword">Password</label>
+                            </div>
+
+                            <div class="custom-control custom-checkbox mb-3">
+                            <input type="checkbox" class="custom-control-input" id="customCheck1">
+                            <label class="custom-control-label" for="customCheck1">Se souvenir de moi !</label>
+                            </div>
+                            <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Se connecter</button>
+                            <hr class="my-4">
+                            <button class="btn btn-lg btn-google btn-block text-uppercase" type="submit">Première visite ? Enregistrez-vous !</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        <!-- <form id="formLogin">
             <input type="text" placeholder="username" name="username">
             <input type="password" placeholder="password" name="password">
             <input class="btn btn-primary btn-sm" type="submit" value="LOGIN">
-        </form>
-    </div>
+        </form> -->
 </section>
 
 <setion id="map">
