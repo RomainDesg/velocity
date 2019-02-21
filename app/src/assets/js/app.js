@@ -16,10 +16,10 @@ $.ajax({
     success: function(data){
         console.log(data);
         data.forEach(function(marker) {
-            // create a DOM element for the marker
+// create a DOM element for the marker
             var el = document.createElement('div');
             el.id = 'marker';
-        console.log(el.id);
+            console.log(el.id);
             var popup = new mapboxgl.Popup({ offset: 25 })
             .setHTML(`
                 <strong>${marker.name}</strong></br>
@@ -29,17 +29,24 @@ $.ajax({
                 <form onSubmit="formSubmitPopup(event)">
                     <input type="submit" class="btn btn-sm btn-success value="RESERVER">
                 </form>`);  
-        // add marker to map
-        new mapboxgl.Marker(el)
-            .setLngLat(marker.position)
-            .setPopup(popup)
-            .addTo(map);
-        });     
+// add marker to map
+    new mapboxgl.Marker(el)
+        .setLngLat(marker.position)
+        .setPopup(popup)
+        .addTo(map);
+    });     
     },
     error: function(data){
         console.error();
     }
 })
+// Add geolocate control to the map.
+map.addControl(new mapboxgl.GeolocateControl({
+    positionOptions: {
+    enableHighAccuracy: true
+    },
+    trackUserLocation: true
+    }))
 
 
 
