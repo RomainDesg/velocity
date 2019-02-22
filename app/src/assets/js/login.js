@@ -13,7 +13,7 @@ $("#formLogin").on("submit", function(){
             data = JSON.parse(data);
             console.log(data);
             if(data.username){
-                $("formLogin").hide();
+                $("#formLogin").hide();
                 $("#map").show();
                 
                 var mapDiv = $("#map");
